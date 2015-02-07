@@ -15,19 +15,42 @@ namespace Atlas
 
         public void Play(string song)
         {
-            file = new AudioFileReader(song);
-            wavePlayer.Init(file);
-            wavePlayer.Play();
+            try
+            {
+                file = new AudioFileReader(song);
+                wavePlayer.Init(file);
+                wavePlayer.Play();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(String.Format("SongService: Broke on Play() : {0}", ex));
+            }
+
         }
 
         public void Stop()
         {
-            wavePlayer.Stop();
+            try
+            {
+                wavePlayer.Stop();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(String.Format("SongService: Broke on Stop() : {0}", ex));
+            }
+
         }
 
         public void Pause()
         {
-            wavePlayer.Pause();
+            try
+            {
+                wavePlayer.Pause();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(String.Format("SongService: Broke on Pause() : {0}", ex));
+            }
         }
 
         
