@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.stopButton = new System.Windows.Forms.Button();
             this.nowPlayingLabel = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.pauseButton = new System.Windows.Forms.Button();
             this.musicDataGridView = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.musicDataGridView)).BeginInit();
@@ -51,19 +52,11 @@
             // nowPlayingLabel
             // 
             this.nowPlayingLabel.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nowPlayingLabel.Location = new System.Drawing.Point(122, 9);
+            this.nowPlayingLabel.Location = new System.Drawing.Point(12, 9);
             this.nowPlayingLabel.Name = "nowPlayingLabel";
-            this.nowPlayingLabel.Size = new System.Drawing.Size(436, 45);
+            this.nowPlayingLabel.Size = new System.Drawing.Size(546, 45);
             this.nowPlayingLabel.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 45);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Now Playing:";
+            this.nowPlayingLabel.Text = "Now Playing :";
             // 
             // pauseButton
             // 
@@ -84,7 +77,23 @@
             this.musicDataGridView.AllowUserToResizeColumns = false;
             this.musicDataGridView.AllowUserToResizeRows = false;
             this.musicDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.musicDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.musicDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.musicDataGridView.DefaultCellStyle = dataGridViewCellStyle6;
             this.musicDataGridView.Location = new System.Drawing.Point(12, 97);
             this.musicDataGridView.MultiSelect = false;
             this.musicDataGridView.Name = "musicDataGridView";
@@ -102,7 +111,6 @@
             this.ClientSize = new System.Drawing.Size(570, 353);
             this.Controls.Add(this.musicDataGridView);
             this.Controls.Add(this.pauseButton);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.nowPlayingLabel);
             this.Controls.Add(this.stopButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -118,7 +126,6 @@
 
         private System.Windows.Forms.Button stopButton;
         private System.Windows.Forms.Label nowPlayingLabel;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button pauseButton;
         private System.Windows.Forms.DataGridView musicDataGridView;
     }
