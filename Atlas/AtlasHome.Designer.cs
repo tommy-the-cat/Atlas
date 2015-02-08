@@ -28,23 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.musicListBox = new System.Windows.Forms.ListBox();
             this.stopButton = new System.Windows.Forms.Button();
             this.nowPlayingLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pauseButton = new System.Windows.Forms.Button();
+            this.musicDataGridView = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.musicDataGridView)).BeginInit();
             this.SuspendLayout();
-            // 
-            // musicListBox
-            // 
-            this.musicListBox.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.musicListBox.FormattingEnabled = true;
-            this.musicListBox.ItemHeight = 11;
-            this.musicListBox.Location = new System.Drawing.Point(12, 96);
-            this.musicListBox.Name = "musicListBox";
-            this.musicListBox.Size = new System.Drawing.Size(337, 246);
-            this.musicListBox.TabIndex = 1;
-            this.musicListBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.musicListBox_MouseDoubleClick);
             // 
             // stopButton
             // 
@@ -63,7 +53,7 @@
             this.nowPlayingLabel.Font = new System.Drawing.Font("Lucida Console", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nowPlayingLabel.Location = new System.Drawing.Point(122, 9);
             this.nowPlayingLabel.Name = "nowPlayingLabel";
-            this.nowPlayingLabel.Size = new System.Drawing.Size(227, 45);
+            this.nowPlayingLabel.Size = new System.Drawing.Size(436, 45);
             this.nowPlayingLabel.TabIndex = 3;
             // 
             // label1
@@ -79,7 +69,7 @@
             // 
             this.pauseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.pauseButton.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pauseButton.Location = new System.Drawing.Point(197, 67);
+            this.pauseButton.Location = new System.Drawing.Point(406, 67);
             this.pauseButton.Name = "pauseButton";
             this.pauseButton.Size = new System.Drawing.Size(152, 23);
             this.pauseButton.TabIndex = 5;
@@ -87,31 +77,50 @@
             this.pauseButton.UseVisualStyleBackColor = true;
             this.pauseButton.Click += new System.EventHandler(this.pauseButton_Click);
             // 
+            // musicDataGridView
+            // 
+            this.musicDataGridView.AllowUserToAddRows = false;
+            this.musicDataGridView.AllowUserToDeleteRows = false;
+            this.musicDataGridView.AllowUserToResizeColumns = false;
+            this.musicDataGridView.AllowUserToResizeRows = false;
+            this.musicDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.musicDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.musicDataGridView.Location = new System.Drawing.Point(12, 97);
+            this.musicDataGridView.MultiSelect = false;
+            this.musicDataGridView.Name = "musicDataGridView";
+            this.musicDataGridView.ReadOnly = true;
+            this.musicDataGridView.RowHeadersVisible = false;
+            this.musicDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.musicDataGridView.Size = new System.Drawing.Size(546, 244);
+            this.musicDataGridView.TabIndex = 6;
+            this.musicDataGridView.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.musicDataGridView_CellMouseDoubleClick);
+            // 
             // AtlasHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(361, 353);
+            this.ClientSize = new System.Drawing.Size(570, 353);
+            this.Controls.Add(this.musicDataGridView);
             this.Controls.Add(this.pauseButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.nowPlayingLabel);
             this.Controls.Add(this.stopButton);
-            this.Controls.Add(this.musicListBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "AtlasHome";
             this.Text = "Atlas";
             this.Load += new System.EventHandler(this.AtlasHome_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.musicDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.ListBox musicListBox;
         private System.Windows.Forms.Button stopButton;
         private System.Windows.Forms.Label nowPlayingLabel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button pauseButton;
+        private System.Windows.Forms.DataGridView musicDataGridView;
     }
 }
 

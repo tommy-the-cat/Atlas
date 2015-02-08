@@ -18,6 +18,7 @@ namespace Atlas
     public partial class AtlasHome : Form
     {
         SongService songService = new SongService();
+        private const string MUSICPATH = "C:\\Users\\Public\\Music\\Sample Music\\";
 
         public AtlasHome()
         {
@@ -26,24 +27,22 @@ namespace Atlas
 
         private void AtlasHome_Load(object sender, EventArgs e)
         {
-            string[] files = Directory.GetFiles("C:\\Users\\Public\\Music\\Sample Music", "*.mp3");
+            string[] files = Directory.GetFiles(MUSICPATH, "*.mp3");
+
+            BindingSource musicBindingSource = new BindingSource();
+            List<Song> songList = new List<Song> { };
+
             for (int i = 0; i < files.Length; i++)
             {
-                //files[i] = files[i].Replace("C:\\Users\\Public\\Music\\Sample Music\\", "");
-                musicListBox.Items.Add(files[i]);
+                Song song = new Song();
+                song.Path = files[i];
+                song.Title = files[i].Replace(MUSICPATH, "");
+                songList.Add(song);
             }
-        }
 
-        private void musicListBox_MouseDoubleClick(object sender, MouseEventArgs e)
-        {           
-             // TODO :                                                                                     
-             // Replace the listbox with a datagridview.                                                   
-             // I'll be able to create a hidden field in the datagridview to hold the path to the song     
-             // and be able to display the song names without the stupid path                               
-            
-            nowPlayingLabel.Text = musicListBox.SelectedItem.ToString().Replace("C:\\Users\\Public\\Music\\Sample Music\\", "");
-            songService.Play(musicListBox.SelectedItem.ToString());
-            
+            musicBindingSource.DataSource = songList;
+            musicDataGridView.DataSource = musicBindingSource;
+            musicDataGridView.Refresh();
         }
 
         private void stopButton_Click(object sender, EventArgs e)
@@ -55,6 +54,17 @@ namespace Atlas
         private void pauseButton_Click(object sender, EventArgs e)
         {
             songService.Pause();
+        }
+
+        private void musicDataGridView_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            int rowIndex = e.RowIndex;
+            DataGridViewRow row = musicDataGridView.Rows[rowIndex];
+
+            Song song = new Song(row.Cells[0].Value.ToString(), row.Cells[1].Value.ToString());
+
+            nowPlayingLabel.Text = song.Title;
+            songService.Play(song.Path);
         }
 
     }
