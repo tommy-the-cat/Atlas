@@ -51,8 +51,6 @@ namespace Atlas
             {
                 throw new Exception(String.Format("SongService: Broke on Pause() : {0}", ex));
             }
-        }
-
-        
+        }        
     }
 }
