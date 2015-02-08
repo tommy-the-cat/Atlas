@@ -97,6 +97,7 @@
             this.Controls.Add(this.nowPlayingLabel);
             this.Controls.Add(this.stopButton);
             this.Controls.Add(this.musicListBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "AtlasHome";
             this.Text = "Atlas";
             this.Load += new System.EventHandler(this.AtlasHome_Load);
