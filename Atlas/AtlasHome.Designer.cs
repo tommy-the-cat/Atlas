@@ -37,15 +37,19 @@
             // 
             // musicListBox
             // 
+            this.musicListBox.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.musicListBox.FormattingEnabled = true;
+            this.musicListBox.ItemHeight = 11;
             this.musicListBox.Location = new System.Drawing.Point(12, 96);
             this.musicListBox.Name = "musicListBox";
-            this.musicListBox.Size = new System.Drawing.Size(337, 251);
+            this.musicListBox.Size = new System.Drawing.Size(337, 246);
             this.musicListBox.TabIndex = 1;
             this.musicListBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.musicListBox_MouseDoubleClick);
             // 
             // stopButton
             // 
+            this.stopButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.stopButton.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.stopButton.Location = new System.Drawing.Point(12, 67);
             this.stopButton.Name = "stopButton";
             this.stopButton.Size = new System.Drawing.Size(152, 23);
@@ -73,6 +77,8 @@
             // 
             // pauseButton
             // 
+            this.pauseButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.pauseButton.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pauseButton.Location = new System.Drawing.Point(197, 67);
             this.pauseButton.Name = "pauseButton";
             this.pauseButton.Size = new System.Drawing.Size(152, 23);
