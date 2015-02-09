@@ -39,7 +39,6 @@ namespace Atlas
         {
             // Populate array of songs in the specified directory
             string[] files = Directory.GetFiles(MUSICPATH, "*.mp3");
-
             BindingSource musicBindingSource = new BindingSource();
             List<Song> songList = new List<Song> { };
 
@@ -68,19 +67,13 @@ namespace Atlas
         /// <param name="e"></param>
         private void musicDataGridView_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            try
+            int rowIndex = e.RowIndex;
+            if (rowIndex >= 0)
             {
-                int rowIndex = e.RowIndex;
                 DataGridViewRow row = musicDataGridView.Rows[rowIndex];
-
                 Song song = new Song(row.Cells[0].Value.ToString(), row.Cells[1].Value.ToString(), row.Cells[2].Value.ToString());
-
                 nowPlayingLabel.Text = String.Format("Now Playing : {0} By {1}", song.Title, song.Artist);
                 songService.Play(song.Path);
-            }
-            catch (Exception ex)
-            {
-                // throws index out of range
             }
         }
 
