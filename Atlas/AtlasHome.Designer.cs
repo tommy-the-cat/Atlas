@@ -30,11 +30,18 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AtlasHome));
             this.stopButton = new System.Windows.Forms.Button();
             this.nowPlayingLabel = new System.Windows.Forms.Label();
             this.pauseButton = new System.Windows.Forms.Button();
             this.musicDataGridView = new System.Windows.Forms.DataGridView();
+            this.pausePictureBox = new System.Windows.Forms.PictureBox();
+            this.stopPictureBox = new System.Windows.Forms.PictureBox();
+            this.playPictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.musicDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pausePictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stopPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // stopButton
@@ -47,7 +54,6 @@
             this.stopButton.TabIndex = 2;
             this.stopButton.Text = "stop";
             this.stopButton.UseVisualStyleBackColor = true;
-            this.stopButton.Click += new System.EventHandler(this.stopButton_Click);
             // 
             // nowPlayingLabel
             // 
@@ -68,7 +74,6 @@
             this.pauseButton.TabIndex = 5;
             this.pauseButton.Text = "pause";
             this.pauseButton.UseVisualStyleBackColor = true;
-            this.pauseButton.Click += new System.EventHandler(this.pauseButton_Click);
             // 
             // musicDataGridView
             // 
@@ -105,11 +110,46 @@
             this.musicDataGridView.TabIndex = 6;
             this.musicDataGridView.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.musicDataGridView_CellMouseDoubleClick);
             // 
+            // pausePictureBox
+            // 
+            this.pausePictureBox.Image = ((System.Drawing.Image)(resources.GetObject("pausePictureBox.Image")));
+            this.pausePictureBox.Location = new System.Drawing.Point(320, 39);
+            this.pausePictureBox.Name = "pausePictureBox";
+            this.pausePictureBox.Size = new System.Drawing.Size(26, 25);
+            this.pausePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pausePictureBox.TabIndex = 7;
+            this.pausePictureBox.TabStop = false;
+            this.pausePictureBox.Click += new System.EventHandler(this.pausePictureBox_Click);
+            // 
+            // stopPictureBox
+            // 
+            this.stopPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("stopPictureBox.Image")));
+            this.stopPictureBox.Location = new System.Drawing.Point(276, 28);
+            this.stopPictureBox.Name = "stopPictureBox";
+            this.stopPictureBox.Size = new System.Drawing.Size(42, 53);
+            this.stopPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.stopPictureBox.TabIndex = 8;
+            this.stopPictureBox.TabStop = false;
+            this.stopPictureBox.Click += new System.EventHandler(this.stopPictureBox_Click);
+            // 
+            // playPictureBox
+            // 
+            this.playPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("playPictureBox.Image")));
+            this.playPictureBox.Location = new System.Drawing.Point(245, 33);
+            this.playPictureBox.Name = "playPictureBox";
+            this.playPictureBox.Size = new System.Drawing.Size(31, 39);
+            this.playPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.playPictureBox.TabIndex = 9;
+            this.playPictureBox.TabStop = false;
+            // 
             // AtlasHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(570, 353);
+            this.Controls.Add(this.playPictureBox);
+            this.Controls.Add(this.stopPictureBox);
+            this.Controls.Add(this.pausePictureBox);
             this.Controls.Add(this.musicDataGridView);
             this.Controls.Add(this.pauseButton);
             this.Controls.Add(this.nowPlayingLabel);
@@ -119,6 +159,9 @@
             this.Text = "Atlas";
             this.Load += new System.EventHandler(this.AtlasHome_Load);
             ((System.ComponentModel.ISupportInitialize)(this.musicDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pausePictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stopPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.playPictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -129,6 +172,9 @@
         private System.Windows.Forms.Label nowPlayingLabel;
         private System.Windows.Forms.Button pauseButton;
         private System.Windows.Forms.DataGridView musicDataGridView;
+        private System.Windows.Forms.PictureBox pausePictureBox;
+        private System.Windows.Forms.PictureBox stopPictureBox;
+        private System.Windows.Forms.PictureBox playPictureBox;
     }
 }
 

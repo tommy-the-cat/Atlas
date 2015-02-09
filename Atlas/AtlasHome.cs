@@ -8,9 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+
+// Library that deals with 
+// audio file attributes
 using TagLib;
 
-// audio shit
+// Library for audio shit
 using NAudio;
 using NAudio.Wave;
 
@@ -59,27 +62,6 @@ namespace Atlas
         }
 
         /// <summary>
-        /// Stops the currently playing track
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void stopButton_Click(object sender, EventArgs e)
-        {
-            nowPlayingLabel.Text = "Now Playing : ";
-            songService.Stop();
-        }
-
-        /// <summary>
-        /// Pauses the currently playing track
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void pauseButton_Click(object sender, EventArgs e)
-        {
-            songService.Pause();
-        }
-
-        /// <summary>
         /// Plays the track that has been double clicked
         /// </summary>
         /// <param name="sender"></param>
@@ -100,6 +82,19 @@ namespace Atlas
             {
                 // throws index out of range
             }
+        }
+
+        // The following should really be moved into buttons
+        // designed properly, but for now it'll do.
+        private void pausePictureBox_Click(object sender, EventArgs e)
+        {
+            songService.Pause();
+        }
+
+        private void stopPictureBox_Click(object sender, EventArgs e)
+        {
+            nowPlayingLabel.Text = "Now Playing : ";
+            songService.Stop();
         }
 
     }
