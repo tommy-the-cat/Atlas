@@ -29,12 +29,6 @@ namespace Atlas
             InitializeComponent();
         }
 
-        /// <summary>
-        /// Handles populating the DataGridView with all songs it finds in the 
-        /// directory specified in 'MUSICPATH'
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void AtlasHome_Load(object sender, EventArgs e)
         {
             // Populate array of songs in the specified directory
@@ -49,22 +43,27 @@ namespace Atlas
 
                 song.Title = tagFile.Tag.Title;
                 song.Path = files[i];
-                song.Artist = tagFile.Tag.FirstAlbumArtist;
-
+                if (tagFile.Tag.FirstPerformer != null)
+                {
+                    song.Artist = tagFile.Tag.FirstPerformer;
+                }
+                else
+                {
+                    song.Artist = "Unknown Artist";
+                }
                 songList.Add(song);
             }
-
             musicBindingSource.DataSource = songList;
             musicDataGridView.DataSource = musicBindingSource;
             musicDataGridView.Columns[1].Visible = false;
             musicDataGridView.Refresh();
+
+            //  TODO :
+            //    Add sorting mechanism for 
+            //    DataGrdiView, possibly turn
+            //    user sorting?
         }
 
-        /// <summary>
-        /// Plays the track that has been double clicked
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void musicDataGridView_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             int rowIndex = e.RowIndex;
